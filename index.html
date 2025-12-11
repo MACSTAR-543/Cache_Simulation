@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cache Memory Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="container">
+        <h1>🏢 Cache Memory Simulator</h1>
+        <h3 style="text-align: center; color: #666; margin-top: -10px;">
+            Direct-Mapped Cache Visualization
+        </h3>
+        
+        <div class="controls">
+            <p style="margin-bottom: 15px; color: #555;">Click "Next Access" to simulate memory access sequence</p>
+            <button onclick="nextStep()">▶️ Next Access</button>
+            <button onclick="resetSimulation()">🔄 Reset Simulation</button>
+            <button onclick="runFullSimulation()">⚡ Run All Steps</button>
+        </div>
+
+        <div class="simulation">
+            <div class="memory">
+                <h3>📦 Main Memory (32 Addresses)</h3>
+                <div id="memory-blocks"></div>
+            </div>
+            
+            <div class="cache">
+                <h3>⚡ Cache Memory (8 Blocks)</h3>
+                <p style="font-size: 12px; color: #666; margin-top: -5px;">
+                    Direct Mapping: Block = Address % 8
+                </p>
+                <div id="cache-blocks"></div>
+            </div>
+        </div>
+
+        <div class="results">
+            <h3>📊 Access Log & Statistics</h3>
+            <div id="access-log">
+                <div style="text-align: center; color: #888; padding: 20px;">
+                    Simulation not started. Click "Next Access" to begin.
+                </div>
+            </div>
+            <p>
+                🎯 Hits: <span id="hit-count">0</span> | 
+                ❌ Misses: <span id="miss-count">0</span> | 
+                📈 Hit Rate: <span id="hit-rate">0%</span>
+            </p>
+        </div>
+        
+        <div style="margin-top: 20px; text-align: center; color: #666; font-size: 14px;">
+            <p>CS413 - Computer Architecture & Organization - Final Project</p>
+            <p> Prepared by:</p>
+            <p> Cabanza, Mia </p>
+            <p> Asuncion, John Patrick </p>
+            <p> Atorda, Jack Denver </p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
